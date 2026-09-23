@@ -4081,16 +4081,24 @@ body.content-page {
       }
 
       .content-page h1 {
-            font-size: 27px;
+            font-size: 29px;
       }
 
       .content-page h2,
 .content-page .section-title h2 {
-            font-size: 23px;
+            font-size: 24px;
       }
 
       .content-page h3 {
             font-size: 17px;
+      }
+
+      .content-page .section-subtitle {
+            font-size: 21px;
+      }
+
+      .content-page p {
+            font-size: 15px;
       }
 
       .content-page .section {
@@ -4163,7 +4171,7 @@ body.content-page {
       }
 
       .content-page .audience-card p {
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.55;
       }
 
@@ -4192,7 +4200,7 @@ body.content-page {
 
       .content-page .quiz-block p {
             margin-bottom: 16px;
-            font-size: 14px;
+            font-size: 15px;
       }
 
       .content-page #prices .tariff {
