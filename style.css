@@ -3840,10 +3840,6 @@ body.content-page {
       margin: 0 0 22px;
 }
 
-.content-page .enrollment-documents__scroll-hint {
-      display: none;
-}
-
 .content-page .enrollment-documents__track {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3989,16 +3985,6 @@ body.content-page {
             scroll-snap-type: x mandatory;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
-      }
-
-      .content-page .enrollment-documents__scroll-hint {
-            display: block;
-            margin: -8px 0 10px;
-            padding-right: 16px;
-            color: #218A8B;
-            font-size: 13px;
-            font-weight: 700;
-            text-align: right;
       }
 
       .content-page .enrollment-documents__track::-webkit-scrollbar,
@@ -4179,7 +4165,7 @@ body.content-page {
       .content-page .hero-ctas .btn:not(.btn-outline),
       .content-page--home .pricing-section__actions .btn,
       .content-page .accommodation-formats__actions .btn {
-            border: 2px solid #186b6c;
+            border: 2px solid #218A8B;
       }
 
       .content-page .audience-card {
@@ -4326,7 +4312,7 @@ body.content-page {
 
       .content-page .enrollment-document-card,
 .content-page .enrollment-document-card:last-child {
-            flex-basis: min(80vw, 320px);
+            flex-basis: min(70vw, 280px);
             padding: 16px;
       }
 
