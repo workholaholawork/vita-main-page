@@ -3840,6 +3840,10 @@ body.content-page {
       margin: 0 0 22px;
 }
 
+.content-page .enrollment-documents__scroll-hint {
+      display: none;
+}
+
 .content-page .enrollment-documents__track {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3985,6 +3989,16 @@ body.content-page {
             scroll-snap-type: x mandatory;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
+      }
+
+      .content-page .enrollment-documents__scroll-hint {
+            display: block;
+            margin: -8px 0 10px;
+            padding-right: 16px;
+            color: #218A8B;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: right;
       }
 
       .content-page .enrollment-documents__track::-webkit-scrollbar,
@@ -4162,6 +4176,12 @@ body.content-page {
             font-size: 14px;
       }
 
+      .content-page .hero-ctas .btn:not(.btn-outline),
+      .content-page--home .pricing-section__actions .btn,
+      .content-page .accommodation-formats__actions .btn {
+            border: 2px solid #186b6c;
+      }
+
       .content-page .audience-card {
             padding: 20px;
       }
@@ -4314,9 +4334,12 @@ body.content-page {
             font-size: 17px;
       }
 
-      .content-page .enrollment-document-card li,
-.content-page .enrollment-documents__note {
+      .content-page .enrollment-document-card li {
             font-size: 13px;
+      }
+
+      .content-page .enrollment-documents__note {
+            font-size: 14px;
       }
 
       .content-page .enrollment-documents__actions {
@@ -4527,6 +4550,27 @@ body.content-page {
 
       .content-page #map .section__head h2 {
             margin-bottom: 0;
+      }
+
+      .content-page .address-pill,
+      .content-page .map-address-card .pill-list a {
+            padding: 10px 15px;
+      }
+
+      .content-page .rating-sources {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            padding-bottom: 0;
+            overflow: visible;
+            scroll-snap-type: none;
+      }
+
+      .content-page .rating-source {
+            width: 100%;
+            min-width: 0;
+            flex: none;
+            padding: 10px 8px;
       }
 
 }
