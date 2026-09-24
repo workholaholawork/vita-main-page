@@ -1,4 +1,19 @@
-/* Базовые стили и типографика */
+/**
+ * Единые стили сайта «Вита».
+ *
+ * Карта файла для разработчиков:
+ * - [ОБЩЕЕ] — компоненты обеих страниц; их можно переносить вместе с разметкой блока.
+ * - [УСЛУГА] — изолированные правила body.content-page--service.
+ * - [АДАПТИВ] — правила соответствующего блока для планшетов и телефонов.
+ * - [ОБЪЕДИНЕНО] — блок раньше находился в usluga.css и перенесён сюда.
+ *
+ * Порядок каскада:
+ * 1. Общая дизайн-система и компоненты.
+ * 2. Общие адаптивные переопределения.
+ * 3. Изолированные стили страницы услуги.
+ */
+
+/* [ОБЩЕЕ] Базовые стили и типографика */
 .content-page * {
       box-sizing: border-box;
       margin: 0;
@@ -112,7 +127,7 @@ body.content-page {
       font-size: 17px;
 }
 
-/* Кнопки */
+/* [ОБЩЕЕ] Кнопки */
 .content-page .btn {
       display: inline-flex;
       align-items: center;
@@ -181,7 +196,7 @@ body.content-page {
       color: #186b6c;
 }
 
-/* Медиа */
+/* [ОБЩЕЕ] Медиа */
 .content-page .media-placeholder {
       background: repeating-linear-gradient(45deg, #eaf3f3, #eaf3f3 10px, #d5e7e7 10px, #d5e7e7 20px);
       border: none;
@@ -228,7 +243,7 @@ body.content-page {
       border: none;
 }
 
-/* Главный экран */
+/* [ОБЩЕЕ] Главный экран */
 .content-page .hero-badges {
       display: flex;
       flex-wrap: wrap;
@@ -373,7 +388,7 @@ body.content-page {
 
 }
 
-/* Кому подходит */
+/* [ОБЩЕЕ] Кому подходит */
 .content-page .audience-card {
       box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
       background: #FFFFFF;
@@ -527,7 +542,7 @@ body.content-page {
       text-align: left;
 }
 
-/* Типы размещения */
+/* [ОБЩЕЕ] Типы размещения */
 .content-page .accommodation-track {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -765,7 +780,7 @@ body.content-page {
 
 }
 
-/* Цены и тарифы */
+/* [ОБЩЕЕ] Цены и тарифы */
 .content-page .tariff-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -885,7 +900,7 @@ body.content-page {
       font-weight: 700;
 }
 
-/* Калькулятор */
+/* [ОБЩЕЕ] Калькулятор */
 .content-page .calculator-wrap {
       background: #FFFFFF;
       border-radius: 16px;
@@ -1052,7 +1067,7 @@ body.content-page {
       letter-spacing: .03em;
 }
 
-/* Состав услуг */
+/* [ОБЩЕЕ] Состав услуг */
 .content-page .includes-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1143,7 +1158,7 @@ body.content-page {
       color: #fff;
 }
 
-/* Попапы */
+/* [ОБЩЕЕ] Попапы */
 .content-page .menu-popup {
       position: fixed;
       inset: 0;
@@ -1220,7 +1235,7 @@ body.content-page {
       margin-bottom: 8px;
 }
 
-/* Квиз */
+/* [ОБЩЕЕ] Квиз */
 .content-page .quiz-popup__dialog {
       max-width: 680px;
 }
@@ -1371,7 +1386,7 @@ body.content-page {
 
 }
 
-/* Филиалы */
+/* [ОБЩЕЕ] Филиалы */
 .content-page .branch-card {
       box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
       background: #FFFFFF;
@@ -1404,7 +1419,7 @@ body.content-page {
       margin-bottom: 32px;
 }
 
-/* Карусели */
+/* [ОБЩЕЕ] Карусели */
 .content-page .content-carousel {
       position: relative;
       margin-top: 40px;
@@ -1852,7 +1867,7 @@ body.content-page {
       margin-bottom: 8px;
 }
 
-/* Персонал */
+/* [ОБЩЕЕ] Персонал */
 .content-page .staff-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1992,7 +2007,7 @@ body.content-page {
       line-height: 1.2;
 }
 
-/* Документы и лицензии */
+/* [ОБЩЕЕ] Документы и лицензии */
 .content-page .docs-block {
       background: #FFFFFF;
       border-radius: 16px;
@@ -2127,18 +2142,6 @@ body.content-page {
       font-size: 14px;
 }
 
-.content-page .rating-source {
-      font-weight: 700;
-      background: #F5F8F9;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 13px;
-      min-width: 118px;
-      height: 40px;
-      text-align: center;
-      white-space: nowrap;
-}
-
 .content-page .reviews-grid {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       display: flex;
@@ -2185,7 +2188,7 @@ body.content-page {
       justify-content: center;
 }
 
-/* Отзывы */
+/* [ОБЩЕЕ] Отзывы */
 .content-page .reviews-summary {
       background: #e6f4f4;
       border-radius: 16px;
@@ -2511,7 +2514,7 @@ body.content-page {
       text-decoration: none;
 }
 
-/* Форма заявки */
+/* [ОБЩЕЕ] Форма заявки */
 .content-page .cta-section {
       background: linear-gradient(135deg, #218A8B 0%, #186b6c 100%);
       color: #FFFFFF;
@@ -2635,7 +2638,7 @@ body.content-page {
       line-height: 1.35;
 }
 
-/* Карточки, сетки и карта */
+/* [ОБЩЕЕ] Карточки, сетки и карта */
 .content-page .card {
       padding: 24px;
       transition: .22s ease;
@@ -3125,18 +3128,13 @@ body.content-page {
 }
 
 .content-page .rating-sources {
-        margin-left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
         width: 100%;
-        margin-top: 18px;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 12px;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        margin: 18px 0 0;
+        padding-bottom: 0;
+        overflow: visible;
 }
 
 .content-page .section__head {
@@ -3179,14 +3177,10 @@ body.content-page {
         text-align: center;
 }
 
-.content-page .rating-sources::-webkit-scrollbar {
-        display: none;
-}
-
 .content-page .rating-source {
-        flex: 0 0 118px;
-        min-width: 118px;
-        scroll-snap-align: start;
+        width: 100%;
+        min-width: 0;
+        padding: 10px 8px;
 }
 
 .content-page .review-header {
@@ -3251,7 +3245,7 @@ body.content-page {
       text-decoration: none;
 }
 
-/* Шаги и FAQ */
+/* [ОБЩЕЕ] Шаги и FAQ */
 .content-page .content-details {
       margin-top: 20px;
       overflow: hidden;
@@ -3425,7 +3419,7 @@ body.content-page {
       color: #FFFFFF;
 }
 
-/* Футер */
+/* [ОБЩЕЕ] Футер */
 .content-page .site-footer {
       padding: 44px 0 30px;
       background: #eef3f4;
@@ -3513,7 +3507,7 @@ body.content-page {
 
 }
 
-/* Аккордеоны блока выбора пансионата */
+/* [ОБЩЕЕ] Аккордеоны блока выбора пансионата */
 @media (max-width: 760px) {
       .content-page .content-details {
             margin-top: 16px;
@@ -3632,14 +3626,23 @@ body.content-page {
 
 }
 
-/* Карусель отзывов */
+/* [ОБЩЕЕ] Карусель отзывов */
 .content-page .rating-source {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      min-width: 118px;
+      height: 40px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: #F5F8F9;
       color: #167f82;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
       text-decoration: none;
+      white-space: nowrap;
       transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -3768,7 +3771,7 @@ body.content-page {
 
 }
 
-/* Оформление в пансионат */
+/* [ОБЩЕЕ] Оформление в пансионат */
 .content-page .transport-banner {
       display: flex;
       align-items: center;
@@ -3947,6 +3950,13 @@ body.content-page {
             scroll-padding-right: 16px;
       }
 
+      .content-page #prices .tariff-grid {
+            width: auto;
+            margin-right: -16px;
+            padding-right: 16px;
+            scroll-padding-right: 16px;
+      }
+
       .content-page .transport-banner {
             align-items: stretch;
             flex-direction: column;
@@ -3956,7 +3966,9 @@ body.content-page {
       }
 
       .content-page .transport-banner__content {
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
       }
 
       .content-page .transport-banner__button {
@@ -4016,7 +4028,7 @@ body.content-page {
 
 }
 
-/* Переопределения компонентов */
+/* [ОБЩЕЕ] Переопределения компонентов */
 .content-page #prices .tariff .price {
       padding: 0 !important;
       border: 0 !important;
@@ -4064,17 +4076,11 @@ body.content-page {
       color: #FFFFFF !important;
 }
 
-.content-page .accommodation-card__features li::before {
-      content: "✓" !important;
-      display: grid !important;
-      color: #186b6c !important;
-}
-
 .content-page .cta-section > .container > p {
       color: #FFFFFF !important;
 }
 
-/* Мобильная версия */
+/* [ОБЩЕЕ][АДАПТИВ] Мобильные переопределения компонентов */
 @media (max-width: 640px) {
       body.content-page {
             font-size: 14px;
@@ -4137,6 +4143,11 @@ body.content-page {
       .content-page .hero-badges {
             gap: 8px;
             margin: 16px 0 18px;
+            margin-right: 0;
+            padding-right: 0;
+            flex-wrap: wrap;
+            overflow: visible;
+            scroll-snap-type: none;
       }
 
       .content-page .hero-ctas {
@@ -4210,10 +4221,13 @@ body.content-page {
       }
 
       .content-page #prices .tariff {
-            padding: 22px 18px;
+            height: auto;
+            min-height: 0;
+            padding: 20px 18px;
       }
 
       .content-page #prices .tariff .price {
+            margin: 8px 0 2px;
             font-size: 25px !important;
       }
 
@@ -4246,11 +4260,8 @@ body.content-page {
 
       .content-page .expert-note {
             gap: 14px;
-            padding: 18px;
-      }
-
-      .content-page .expert-note {
             margin-top: 24px;
+            padding: 18px;
       }
 
       .content-page .expert-avatar {
@@ -4302,8 +4313,11 @@ body.content-page {
       }
 
       .content-page .enrollment-documents {
+            margin-right: 0;
             padding-top: 20px;
+            padding-right: 18px;
             padding-bottom: 20px;
+            border-radius: 12px;
       }
 
       .content-page .enrollment-documents > p:first-of-type {
@@ -4329,12 +4343,18 @@ body.content-page {
       }
 
       .content-page .enrollment-documents__actions {
+            align-items: stretch;
+            flex-direction: column;
             margin-top: 18px;
+            padding-right: 0;
+            overflow: visible;
       }
 
       .content-page .enrollment-documents__actions .btn {
+            width: 100%;
             padding: 11px 16px;
             font-size: 13px;
+            white-space: normal;
       }
 
       .content-page .cta-section {
@@ -4362,33 +4382,15 @@ body.content-page {
             padding: 18px;
       }
 
-      .content-page .hero-badges {
-            flex-wrap: wrap;
-            overflow: visible;
-            scroll-snap-type: none;
-            margin-right: 0;
-            padding-right: 0;
-      }
-
       .content-page #prices .tariff-grid {
             gap: 14px;
             margin-top: 14px;
             padding-top: 14px;
       }
 
-      .content-page #prices .tariff {
-            height: auto;
-            min-height: 0;
-            padding: 20px 18px;
-      }
-
       .content-page #prices .tariff .for-whom {
             min-height: 0;
             margin-bottom: 6px;
-      }
-
-      .content-page #prices .tariff .price {
-            margin: 8px 0 2px;
       }
 
       .content-page #prices .tariff ul {
@@ -4499,26 +4501,8 @@ body.content-page {
             margin-right: 16px;
       }
 
-      .content-page .enrollment-documents {
-            margin-right: 0;
-            padding-right: 18px;
-            border-radius: 12px;
-      }
-
       .content-page .enrollment-documents__track {
             scroll-padding-right: 16px;
-      }
-
-      .content-page .enrollment-documents__actions {
-            align-items: stretch;
-            flex-direction: column;
-            padding-right: 0;
-            overflow: visible;
-      }
-
-      .content-page .enrollment-documents__actions .btn {
-            width: 100%;
-            white-space: normal;
       }
 
       .content-page .cta-form-sub {
@@ -4543,20 +4527,2394 @@ body.content-page {
             padding: 10px 15px;
       }
 
-      .content-page .rating-sources {
+}
+
+/* ========================================================================== */
+/* [УСЛУГА][ОБЪЕДИНЕНО] Изолированные стили страницы услуги                   */
+/* Перенесено из usluga.css. Все правила ограничены .content-page--service.   */
+/* Блоки внутри сохраняют компонентный порядок для удобного извлечения.       */
+/* ========================================================================== */
+/* [УСЛУГА] первый экран */
+@media (min-width: 1025px) {
+      .content-page--service .hero-grid {
+            grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+            gap: 52px;
+      }
+
+      .content-page--service .hero-video {
+            height: 100%;
+            aspect-ratio: auto;
+      }
+
+      .content-page--service .hero-ctas {
+            margin-bottom: 0;
+      }
+}
+
+/* [УСЛУГА] вводный текст */
+.content-page--service .hero-lead {
+      position: relative;
+      margin: 8px 0 26px;
+      padding: 20px 22px 20px 0;
+      max-width: 680px;
+      color: #244546;
+      border-radius: 12px;
+      font-size: 17px;
+      line-height: 1.75;
+}
+
+.content-page--service .content-sample-list ul {
+      margin-top: 8px;
+      margin-bottom: 12px;
+}
+
+.content-page--service .content-sample-list li {
+      margin-bottom: 7px;
+}
+.content-page--service .gallery-item .media-placeholder {
+      height: 100%;
+      min-height: 100%;
+      border-radius: 0;
+      border: none;
+}
+
+/* [УСЛУГА] навигация */
+.content-page--service .breadcrumbs {
+      padding: 14px 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid #d9e4e5;
+      font-size: 13px;
+      color: #6b7c7d;
+}
+
+.content-page--service .breadcrumbs ol {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+}
+
+.content-page--service .breadcrumbs .container>ol>li:not(:last-child)::after {
+      content: "›";
+      margin-left: 6px;
+      color: #6b7c7d;
+}
+
+.content-page--service .breadcrumbs a {
+      color: #218A8B;
+}
+
+/* [УСЛУГА] оглавление */
+.content-page--service .toc-block {
+      background: #FFFFFF;
+      border: 1px solid #d9e4e5;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 32px 0;
+}
+
+.content-page--service .toc-block summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 16px;
+      color: #333333;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.content-page--service .toc-block summary::-webkit-details-marker {
+      display: none;
+}
+
+.content-page--service .toc-block summary::after {
+      content: "▾";
+      color: #218A8B;
+      transition: transform .2s;
+}
+
+.content-page--service .toc-block[open] summary::after {
+      transform: rotate(180deg);
+}
+
+.content-page--service .toc-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin: 14px 0 0;
+}
+
+.content-page--service .toc-list a {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #F5F8F9;
+      border: 1px solid #d9e4e5;
+      color: #445254;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s;
+}
+
+.content-page--service .toc-list a:hover {
+      background: #218A8B;
+      color: #FFFFFF;
+      text-decoration: none;
+}
+
+@media (max-width: 767px) {
+.content-page--service .hero-lead {
+        margin: 0;
+        padding: 10px 0;
+        font-size: 15px;
+}
+}
+
+/* [УСЛУГА] отзыв в контенте */
+.content-page--service .content-review {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      width: 100%;
+      padding: 22px 28px;
+      background: #fff;
+      border: 1px solid #d9e4e5;
+      border-radius: 16px;
+}
+
+.content-page--service .content-review__photo {
+      width: 96px;
+      height: 96px;
+      padding: 0;
+      overflow: hidden;
+      border: 2px solid #e6f4f4;
+      border-radius: 50%;
+      background: #e6f4f4;
+}
+
+.content-page--service .content-review__photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+
+.content-page--service .content-review__photo .media-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      padding: 10px;
+      border: 0;
+      border-radius: 50%;
+      font-size: 9px;
+}
+
+.content-page--service .content-review__photo .media-placeholder strong {
+      font-size: 9px;
+}
+
+.content-page--service .content-review__text {
+      min-width: 0;
+}
+
+.content-page--service .content-review__text p {
+      margin: 0;
+      color: #6b7c7d;
+      font-size: 14px;
+      line-height: 1.65;
+}
+
+.content-page--service .content-review__text p+p {
+      margin-top: 4px;
+}
+
+.content-page--service .content-review__text strong {
+      color: #333333;
+      font-weight: 700;
+}
+
+.content-page--service .content-review__text a {
+      color: #218A8B;
+      font-weight: 700;
+}
+
+.content-page--service .content-review__text a:hover {
+      color: #186b6c;
+}
+
+@media (max-width: 767px) {
+.content-page--service .content-review {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 14px;
+        padding: 22px 20px;
+        text-align: center;
+}
+
+.content-page--service .content-review__photo {
+        width: 82px;
+        height: 82px;
+}
+
+.content-page--service .content-review__text {
+        max-width: 420px;
+}
+
+.content-page--service .content-review__text p {
+        font-size: 13px;
+        line-height: 1.55;
+}
+
+.content-page--service .content-review__text p+p {
+        margin-top: 8px;
+}
+}
+
+/* [УСЛУГА] источники */
+.content-page--service .references-section {
+      background: #FFFFFF;
+}
+
+.content-page--service .references-block__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 17px 20px;
+      border: 1px solid #d9e4e5;
+      border-radius: 8px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+      color: #333333;
+}
+
+.content-page--service .references-block__header h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 700;
+}
+
+.content-page--service .references-details {
+      max-width: none;
+}
+
+.content-page--service .references-details summary {
+      cursor: pointer;
+      list-style: none;
+      transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.content-page--service .references-details summary::-webkit-details-marker {
+      display: none;
+}
+
+.content-page--service .references-toggle-icon {
+      flex: 0 0 auto;
+      color: #218A8B;
+      font-size: 18px;
+      line-height: 1;
+      transform: translateY(1px);
+      transition: transform 0.2s;
+}
+
+.content-page--service .references-details summary:hover {
+      border-color: #218A8B;
+      color: #218A8B;
+      box-shadow: 0 8px 24px rgba(33, 138, 139, 0.1);
+}
+
+.content-page--service .references-details[open] summary {
+      margin-bottom: 18px;
+}
+
+.content-page--service .references-details[open] .references-toggle-icon {
+      transform: rotate(90deg) translateX(1px);
+}
+
+.content-page--service .references-list {
+      display: grid;
+      gap: 0;
+      max-width: 1040px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: reference-item;
+}
+
+.content-page--service .references-list li {
+      counter-increment: reference-item;
+      position: relative;
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid #d9e4e5;
+}
+
+.content-page--service .references-list li:first-child {
+      padding-top: 0;
+}
+
+.content-page--service .references-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+}
+
+.content-page--service .references-list li::before {
+      content: counter(reference-item) ".";
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-top: 1px;
+      color: #186b6c;
+      font-size: 14px;
+      font-weight: 700;
+}
+
+.content-page--service .references-list__source {
+      min-width: 0;
+      color: #333333;
+      font-size: 14px;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+}
+
+.content-page--service .references-list a {
+      color: #218A8B;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(33, 138, 139, 0.35);
+      text-underline-offset: 3px;
+}
+
+.content-page--service .references-list a:hover {
+      color: #186b6c;
+      text-decoration-color: currentColor;
+}
+
+.content-page--service .references-block__instruction {
+      max-width: 1040px;
+      margin-top: 28px;
+}
+
+/* [УСЛУГА] медицинское предупреждение */
+.content-page--service .medical-disclaimer {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      width: 100%;
+      padding: 20px 24px;
+      background: #fff8e8;
+      border: 1px solid #f0d9a6;
+      border-left: 4px solid #d68a00;
+      border-radius: 16px;
+}
+
+.content-page--service .medical-disclaimer__icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff0c7;
+      color: #9a6500;
+      font-size: 20px;
+      font-weight: 700;
+}
+
+.content-page--service .medical-disclaimer__content {
+      min-width: 0;
+}
+
+.content-page--service .medical-disclaimer__content strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #333333;
+      font-size: 15px;
+}
+
+.content-page--service .medical-disclaimer__content p {
+      margin: 0;
+      color: #6b7c7d;
+      font-size: 14px;
+      line-height: 1.65;
+}
+
+/* [УСЛУГА] полезные ссылки */
+.content-page--service .service-links {
+      margin-top: 28px;
+      background: #e6f4f4;
+      border-radius: 16px;
+      padding: 32px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 26px;
+      align-items: center;
+}
+
+.content-page--service .service-links h3 {
+      color: #186b6c;
+      font-size: 24px;
+}
+
+.content-page--service .service-links p {
+      color: #186b6c;
+}
+
+.content-page--service .service-links__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+}
+
+.content-page--service .service-links__tags a {
+      color: #e6f4f4;
+      background: #186b6c;
+      border: 2px solid #186b6c;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+}
+
+.content-page--service .service-links__tags a:hover {
+      background: #e6f4f4;
+      color: #186b6c;
+      border: 2px solid #186b6c;
+      text-decoration: none;
+}
+
+/* [УСЛУГА] карточка риска */
+.content-page--service .risk-card {
+      background: linear-gradient(135deg, #fff 0%, #fff8e1 100%);
+      border-color: #ffe082;
+}
+
+.content-page--service .risk-card:hover {
+      border-color: #ffe082;
+}
+
+/* [УСЛУГА] состояния и специализированный уход */
+.content-page--service .disease-features {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 100% 0,
+          rgba(33, 138, 139, 0.08),
+          transparent 34%),
+        linear-gradient(135deg,
+          #ffffff 0%,
+          #f5f8f9 55%,
+          #e6f4f4 100%);
+}
+
+.content-page--service .disease-features .container {
+      min-width: 0;
+}
+
+.content-page--service .disease-features__top {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+}
+
+.content-page--service .disease-card {
+      min-width: 0;
+      padding: 28px;
+      background: #FFFFFF;
+      border: 1px solid #d9e4e5;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+}
+
+.content-page--service .disease-card h3 {
+      margin-bottom: 20px;
+      color: #333333;
+      font-size: 20px;
+      line-height: 1.35;
+}
+
+.content-page--service .feature-steps {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: feature-step;
+}
+
+.content-page--service .feature-steps li {
+      counter-increment: feature-step;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      background: #F5F8F9;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      transition: 0.2s ease;
+}
+
+.content-page--service .feature-steps li::before {
+      content: counter(feature-step);
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 15px;
+      font-weight: 700;
+}
+
+.content-page--service .feature-steps li:hover {
+      background: #FFFFFF;
+      border-color: #d9e4e5;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+}
+
+.content-page--service .feature-steps__content {
+      display: grid;
+      min-width: 0;
+      gap: 4px;
+}
+
+.content-page--service .feature-steps__content strong {
+      color: #333333;
+      font-size: 15px;
+}
+
+.content-page--service .feature-steps__content span {
+      color: #6b7c7d;
+      font-size: 14px;
+      line-height: 1.55;
+}
+
+.content-page--service .feature-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+}
+
+.content-page--service .feature-list li {
+      position: relative;
+      min-width: 0;
+      padding: 13px 14px 13px 44px;
+      background: #F5F8F9;
+      border-radius: 12px;
+      color: #333333;
+      font-size: 14px;
+      line-height: 1.5;
+}
+
+.content-page--service .feature-list li::before {
+      content: "✓";
+      position: absolute;
+      top: 13px;
+      left: 14px;
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 12px;
+      font-weight: 700;
+}
+
+.content-page--service .feature-quote {
+      position: relative;
+      margin: 24px 0;
+      padding: 22px 64px 22px 28px;
+      overflow: hidden;
+      background: rgba(230, 244, 244, 0.78);
+      border: 1px solid #d9e4e5;
+      border-left: 4px solid #218A8B;
+      border-radius: 16px;
+      color: #333333;
+}
+
+.content-page--service .feature-quote::after {
+      content: "“";
+      position: absolute;
+      top: -7px;
+      right: 18px;
+      color: rgba(33, 138, 139, 0.14);
+      font-family: Georgia, serif;
+      font-size: 120px;
+      line-height: 1;
+}
+
+.content-page--service .feature-quote p {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.65;
+}
+
+.content-page--service .disease-card--table {
+      width: 100%;
+}
+
+.content-page--service .feature-table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid #d9e4e5;
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+}
+
+.content-page--service .disease-card--table .mobile-table-content>p {
+      margin: 14px 0 0;
+      color: #6b7c7d;
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.5;
+}
+
+.content-page--service .feature-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: #FFFFFF;
+}
+
+.content-page--service .feature-table caption {
+      padding: 14px 16px;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+}
+
+.content-page--service .feature-table th,
+.content-page--service .feature-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #d9e4e5;
+      color: #333333;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+      vertical-align: top;
+}
+
+.content-page--service .feature-table th {
+      background: #F5F8F9;
+      font-weight: 700;
+}
+
+.content-page--service .feature-table td:first-child {
+      color: #186b6c;
+      font-weight: 700;
+}
+
+.content-page--service .feature-table tbody tr:last-child td {
+      border-bottom: 0;
+}
+
+.content-page--service .disease-expert {
+      min-width: 0;
+      margin-top: 24px;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid #d9e4e5;
+      border-left: 4px solid #218A8B;
+}
+
+.content-page--service .disease-expert__content {
+      min-width: 0;
+}
+
+.content-page--service .expert-quote {
+      margin: 8px 0 0;
+      color: #333333;
+      font-size: 15px;
+      line-height: 1.65;
+      font-style: italic;
+}
+
+@media (max-width: 991px) {
+.content-page--service .disease-features__top {
+        grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 767px) {
+.content-page--service .disease-features .section-title {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+}
+
+.content-page--service .disease-features .section-title h2 {
+        font-size: 27px;
+        overflow-wrap: anywhere;
+}
+
+.content-page--service .disease-card {
+        width: 100%;
+        min-width: 0;
+        padding: 20px;
+}
+
+.content-page--service .disease-card h3 {
+        font-size: 18px;
+}
+
+.content-page--service .feature-steps li {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+}
+
+.content-page--service .feature-steps li::before {
+        width: 36px;
+        height: 36px;
+}
+
+.content-page--service .feature-steps__content span,
+.content-page--service .feature-list li {
+        overflow-wrap: anywhere;
+}
+
+.content-page--service .feature-quote {
+        margin: 20px 0;
+        padding: 20px;
+}
+
+.content-page--service .feature-quote::after {
+        top: 0px;
+        right: 9px;
+        font-size: 80px;
+}
+
+.content-page--service .feature-quote p {
+        padding-right: 28px;
+        font-size: 14px;
+}
+
+.content-page--service .feature-table-wrap {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+}
+
+.content-page--service .feature-table-wrap::-webkit-scrollbar {
+        display: none;
+}
+
+.content-page--service .feature-table {
+        min-width: 680px;
+}
+
+.content-page--service .disease-expert {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 20px;
+}
+
+.content-page--service .disease-expert .expert-avatar {
+        width: 60px;
+        height: 60px;
+}
+}
+
+@media (max-width: 479px) {
+.content-page--service .disease-features .section-title h2 {
+        font-size: 24px;
+}
+
+.content-page--service .disease-card {
+        padding: 18px;
+}
+
+.content-page--service .feature-steps li {
+        grid-template-columns: 32px minmax(0, 1fr);
+}
+
+.content-page--service .feature-steps li::before {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+}
+
+.content-page--service .feature-table {
+        min-width: 620px;
+}
+}
+
+.content-page--service .rehabilitation-programs__top {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+}
+
+.content-page--service .rehabilitation-card {
+      min-width: 0;
+      padding: 28px;
+      background: #FFFFFF;
+      border: 1px solid #d9e4e5;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+}
+
+.content-page--service .rehabilitation-card h3 {
+      margin-bottom: 20px;
+      color: #333333;
+      font-size: 20px;
+      line-height: 1.35;
+}
+
+.content-page--service .rehabilitation-steps {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: rehabilitation-step;
+}
+
+.content-page--service .rehabilitation-steps li {
+      counter-increment: rehabilitation-step;
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      background: #F5F8F9;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      transition: 0.2s ease;
+}
+
+.content-page--service .rehabilitation-steps li::before {
+      content: counter(rehabilitation-step, decimal-leading-zero);
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 14px;
+      font-weight: 700;
+}
+
+.content-page--service .rehabilitation-steps li:hover {
+      background: #FFFFFF;
+      border-color: #d9e4e5;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+}
+
+.content-page--service .rehabilitation-steps__content {
+      display: grid;
+      min-width: 0;
+      gap: 4px;
+}
+
+.content-page--service .rehabilitation-steps__content strong {
+      color: #333333;
+      font-size: 15px;
+}
+
+.content-page--service .rehabilitation-steps__content span {
+      color: #6b7c7d;
+      font-size: 14px;
+      line-height: 1.55;
+}
+
+.content-page--service .rehabilitation-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+}
+
+.content-page--service .rehabilitation-quote {
+      position: relative;
+      margin: 24px 0;
+      padding: 24px 64px 24px 28px;
+      overflow: hidden;
+      background: rgba(230, 244, 244, 0.78);
+      border: 1px solid #d9e4e5;
+      border-left: 4px solid #218A8B;
+      border-radius: 16px;
+      color: #333333;
+}
+
+.content-page--service .rehabilitation-quote::after {
+      content: "“";
+      position: absolute;
+      top: -7px;
+      right: 18px;
+      color: rgba(33, 138, 139, 0.14);
+      font-family: Georgia, serif;
+      font-size: 120px;
+      line-height: 1;
+}
+
+.content-page--service .rehabilitation-quote p {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.65;
+}
+
+.content-page--service .rehabilitation-card--table {
+      width: 100%;
+}
+
+.content-page--service .rehabilitation-table-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid #d9e4e5;
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+}
+
+.content-page--service .rehabilitation-table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      background: #FFFFFF;
+}
+
+.content-page--service .rehabilitation-table caption {
+      padding: 14px 16px;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+}
+
+.content-page--service .rehabilitation-table th,
+.content-page--service .rehabilitation-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #d9e4e5;
+      color: #333333;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+      vertical-align: top;
+}
+
+.content-page--service .rehabilitation-table th {
+      background: #F5F8F9;
+      font-weight: 700;
+}
+
+.content-page--service .rehabilitation-table td:first-child {
+      color: #186b6c;
+      font-weight: 700;
+}
+
+.content-page--service .rehabilitation-table tbody tr:last-child td {
+      border-bottom: 0;
+}
+
+.content-page--service .rehabilitation-expert {
+      min-width: 0;
+      margin-top: 24px;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid #d9e4e5;
+      border-left: 4px solid #218A8B;
+}
+
+.content-page--service .rehabilitation-expert__content {
+      min-width: 0;
+}
+
+.content-page--service .rehabilitation-expert__quote {
+      margin: 8px 0 0;
+      color: #333333;
+      font-size: 15px;
+      line-height: 1.65;
+      font-style: italic;
+}
+
+@media (max-width: 991px) {
+.content-page--service .rehabilitation-programs__top {
+        grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 767px) {
+
+.content-page--service .rehabilitation-card {
+        width: 100%;
+        min-width: 0;
+        padding: 20px;
+}
+
+.content-page--service .rehabilitation-card h3 {
+        font-size: 18px;
+}
+
+.content-page--service .rehabilitation-steps li {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+}
+
+.content-page--service .rehabilitation-steps li::before {
+        width: 38px;
+        height: 38px;
+        font-size: 12px;
+}
+
+.content-page--service .rehabilitation-steps__content span,
+.content-page--service .rehabilitation-list li {
+        overflow-wrap: anywhere;
+}
+
+.content-page--service .rehabilitation-quote {
+        margin: 20px 0;
+        padding: 20px;
+}
+
+.content-page--service .rehabilitation-quote::after {
+        top: 0px;
+        right: 9px;
+        font-size: 80px;
+}
+
+.content-page--service .rehabilitation-quote p {
+        padding-right: 28px;
+        font-size: 14px;
+}
+
+.content-page--service .rehabilitation-table-wrap {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+}
+
+.content-page--service .rehabilitation-table-wrap::-webkit-scrollbar {
+        display: none;
+}
+
+.content-page--service .rehabilitation-table {
+        min-width: 720px;
+}
+
+.content-page--service .rehabilitation-expert {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 20px;
+}
+
+.content-page--service .rehabilitation-expert .expert-avatar {
+        width: 60px;
+        height: 60px;
+}
+}
+
+@media (max-width: 479px) {
+
+.content-page--service .rehabilitation-card {
+        padding: 18px;
+}
+
+.content-page--service .rehabilitation-steps li {
+        grid-template-columns: 34px minmax(0, 1fr);
+}
+
+.content-page--service .rehabilitation-steps li::before {
+        width: 34px;
+        height: 34px;
+}
+
+.content-page--service .rehabilitation-table {
+        min-width: 660px;
+}
+}
+
+/* [УСЛУГА] реабилитация */
+.content-page--service .rehabilitation-programs {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 0 100%,
+          rgba(33, 138, 139, 0.08),
+          transparent 32%),
+        linear-gradient(135deg,
+          #f5f8f9 0%,
+          #ffffff 50%,
+          #e6f4f4 100%);
+}
+
+.content-page--service .rehabilitation-programs .container {
+      min-width: 0;
+}
+
+@media (max-width: 767px) {
+.content-page--service .rehabilitation-programs .section-title {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+}
+
+.content-page--service .rehabilitation-programs .section-title h2 {
+        font-size: 27px;
+        overflow-wrap: anywhere;
+}
+}
+
+@media (max-width: 479px) {
+.content-page--service .rehabilitation-programs .section-title h2 {
+        font-size: 24px;
+}
+}
+
+/* [УСЛУГА] пояснение к скидке */
+.content-page--service .tariff-discount__note {
+      font-size: 13px;
+      font-weight: 400;
+      color: #8a9a9d;
+}
+
+.content-page--service .tariff-discount:hover .tariff-discount__note {
+      color: #667579;
+}
+
+/* [УСЛУГА] распорядок дня */
+.content-page--service .schedule-timeline {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+      margin-bottom: 40px;
+}
+
+.content-page--service .schedule-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #186b6c;
+}
+
+.content-page--service .schedule-title svg {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      color: #218A8B;
+}
+
+.content-page--service .schedule-list {
+      list-style: none;
+      padding: 0;
+}
+
+.content-page--service .schedule-item {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px dashed #d9e4e5;
+      align-items: center;
+}
+
+.content-page--service .schedule-period {
+      margin: 22px 0 4px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+}
+
+.content-page--service .schedule-period:first-child {
+      margin-top: 0;
+}
+
+.content-page--service .schedule-item:last-child {
+      border-bottom: none;
+}
+
+.content-page--service .schedule-time {
+      font-weight: 700;
+      color: #218A8B;
+      font-size: 16px;
+}
+
+.content-page--service .schedule-activity {
+      font-size: 15px;
+}
+
+.content-page--service .icon-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+}
+
+.content-page--service .icon-heading svg {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      color: #218A8B;
+}
+
+/* [УСЛУГА] галерея */
+.content-page--service .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 180px;
+      gap: 12px;
+      margin-bottom: 30px;
+}
+
+.content-page--service .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #e6f4f4;
+      position: relative;
+      cursor: pointer;
+}
+
+.content-page--service .gallery-item.wide {
+      grid-column: span 2;
+}
+
+.content-page--service .gallery-item.tall {
+      grid-row: span 2;
+}
+
+.content-page--service .gallery-caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+}
+
+.content-page--service .schedule-item--current {
+      margin: 0 -12px;
+      padding-right: 12px;
+      padding-left: 12px;
+      border-radius: 10px;
+      background: #e6f4f4;
+}
+
+.content-page--service .schedule-current-label {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0;
+      margin-left: 0;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #218A8B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.2;
+}
+
+.content-page--service .schedule-item--current .schedule-time {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+}
+
+/* [УСЛУГА] активности */
+.content-page--service .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      align-items: stretch;
+}
+
+.content-page--service .activity-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: 100%;
+      padding: 28px 24px;
+      background: #FFFFFF;
+      border: 1px solid #d9e4e5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+      transition: all 0.25s;
+}
+
+.content-page--service .activity-card h3 {
+      min-height: 46px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.3;
+      color: #333333;
+}
+
+/* [УСЛУГА] список для переезда */
+.content-page--service .moving-list-card {
+      margin-top: 32px;
+      padding: 28px;
+      background: #FFFFFF;
+      border-radius: 12px;
+}
+
+/* [УСЛУГА] связанные материалы */
+.content-page--service .link-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+}
+
+.content-page--service .link-card>a {
+      margin-top: auto;
+      font-weight: 700;
+}
+
+.content-page--service .links-track {
+      display: flex;
+      align-items: stretch;
+      gap: 22px;
+      overflow-x: auto;
+      padding: 4px 2px 16px;
+      scroll-snap-type: x proximity;
+      scroll-padding-inline: 2px;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+}
+
+.content-page--service .links-track .link-card {
+      flex: 0 0 calc((100% - 44px) / 3);
+      min-width: 0;
+      min-height: 250px;
+      scroll-snap-align: start;
+}
+
+.content-page--service .links-track::-webkit-scrollbar {
+      height: 8px;
+}
+
+.content-page--service .links-track::-webkit-scrollbar-track {
+      background: rgba(33, 138, 139, 0.08);
+      border-radius: 999px;
+}
+
+.content-page--service .links-track::-webkit-scrollbar-thumb {
+      background: rgba(33, 138, 139, 0.35);
+      border-radius: 999px;
+}
+
+.content-page--service .links-track::-webkit-scrollbar-thumb:hover {
+      background: rgba(33, 138, 139, 0.55);
+}
+
+/* [УСЛУГА] теги */
+.content-page--service .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+}
+
+.content-page--service .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 12px;
+      font-weight: 700;
+}
+
+.content-page--service .u-mt-16 {
+      margin-top: 16px;
+}
+
+/* [УСЛУГА] вспомогательные классы */
+.content-page--service .u-text-center {
+      text-align: center;
+}
+
+.content-page--service .hero-placeholder--full {
+      height: 100%;
+      min-height: 280px;
+}
+
+.content-page--service .inline-actions-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: auto;
+}
+
+.content-page--service .section-subtitle--gallery {
+      margin-top: 40px;
+      margin-bottom: 12px;
+      text-align: center;
+}
+
+@media (max-width: 1024px) {
+.content-page--service .links-track .link-card {
+        flex-basis: calc((100% - 22px) / 2);
+}
+
+.content-page--service .service-links {
+        grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 640px) {
+.content-page--service .links-track {
+        gap: 14px;
+        margin-right: -16px;
+        padding-right: 16px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+}
+
+.content-page--service .links-track::-webkit-scrollbar {
+        display: none;
+}
+
+.content-page--service .links-track .link-card {
+        flex-basis: min(86vw, 330px);
+        min-height: auto;
+}
+
+}
+
+@media (max-width: 1024px) {
+
+.content-page--service .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+}
+.content-page--service .activity-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        min-width: 0;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        scroll-padding-left: 4px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+}
+.content-page--service .activity-grid::-webkit-scrollbar {
+        display: none;
+        height: 0;
+}
+
+.content-page--service .activity-grid>.activity-card {
+        flex: 0 0 82%;
+        width: 82%;
+        max-width: 320px;
+        scroll-snap-align: start;
+}
+}
+
+@media (max-width: 640px) {
+
+.content-page--service .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+}
+
+.content-page--service .activity-grid>.activity-card {
+        flex-basis: 88%;
+        width: 88%;
+        max-width: 310px;
+}
+}
+
+/* [УСЛУГА][АДАПТИВ] Мобильные переопределения */
+@media (max-width: 640px) {
+.content-page--service .content-review {
+            gap: 14px;
+            padding: 18px;
+      }
+}
+
+/* [УСЛУГА] хлебные крошки и блок под первым экраном */
+.content-page--service .hero .breadcrumbs {
+      margin: 0;
+      padding: 0 0 22px;
+      border: 0;
+      background: transparent;
+}
+
+.content-page--service .hero .breadcrumbs ol {
+      margin: 0;
+      padding: 0;
+}
+
+.content-page--service .hero .breadcrumbs ol>li:not(:last-child)::after {
+      content: "›";
+      margin-left: 6px;
+      color: #6b7c7d;
+}
+
+.content-page--service .service-navigation {
+      padding: 32px 0 0;
+      background: #F5F8F9;
+}
+
+.content-page--service .service-navigation .toc-block {
+      margin: 0 0 24px;
+}
+
+@media (min-width: 901px) {
+      .content-page--service .hero {
+            margin-bottom: 0;
+      }
+
+      .content-page--service .service-navigation {
+            padding-top: 20px;
+      }
+
+      .content-page--service .service-navigation .toc-block {
+            margin-bottom: 16px;
+            padding: 14px 18px;
+      }
+
+      .content-page--service .service-navigation .toc-list {
+            gap: 4px;
+            margin-top: 10px;
+      }
+
+      .content-page--service .service-navigation .toc-list a {
+            padding: 6px 10px;
+            font-size: 13px;
+      }
+
+      .content-page--service .service-navigation .content-review {
+            grid-template-columns: 72px minmax(0, 1fr);
+            gap: 18px;
+            padding: 14px 22px;
+      }
+
+      .content-page--service .service-navigation .content-review__photo {
+            width: 72px;
+            height: 72px;
+      }
+
+      .content-page--service #audience {
+            padding-top: 60px;
+      }
+
+      .content-page--service #audience .section-title {
+            margin-top: 0;
+      }
+}
+
+/* [УСЛУГА] карточки аудитории */
+.content-page--service #audience .audience-card>article {
+      flex: 1 1 auto;
+}
+
+.content-page--service #audience .audience-card>.audience-link,
+.content-page--service #audience .audience-card>.inline-links-row {
+      margin-top: 18px;
+}
+
+/* [УСЛУГА] цитаты и отметки в списках */
+.content-page--service .feature-quote,
+.content-page--service .rehabilitation-quote {
+      min-height: 0;
+}
+
+.content-page--service .feature-quote::before,
+.content-page--service .rehabilitation-quote::before,
+.content-page--service .expert-quote::before,
+.content-page--service .expert-quote::after,
+.content-page--service .rehabilitation-expert__quote::before,
+.content-page--service .rehabilitation-expert__quote::after {
+      content: none !important;
+      display: none !important;
+}
+
+.content-page--service .feature-quote::after,
+.content-page--service .rehabilitation-quote::after {
+      display: block !important;
+      width: auto !important;
+      height: auto !important;
+      border: 0 !important;
+      background: transparent !important;
+      transform: none !important;
+}
+
+.content-page--service .expert-quote,
+.content-page--service .rehabilitation-expert__quote {
+      max-width: none;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      font-style: normal;
+}
+
+.content-page--service .feature-list li::before,
+.content-page--service .rehabilitation-list li::before {
+      content: "✓" !important;
+      display: grid !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      z-index: 1;
+}
+
+/* [УСЛУГА] специалисты и активности */
+.content-page--service #staff h3 {
+      text-align: center;
+}
+
+.content-page--service #staff .staff-carousel .content-carousel__header--controls-only {
+      position: relative;
+      justify-content: center;
+}
+
+.content-page--service #staff .staff-carousel .content-carousel__nav {
+      position: absolute;
+      right: 0;
+}
+
+.content-page--service .activity-carousel {
+      margin-top: 36px;
+}
+
+.content-page--service .activity-carousel .content-carousel__header {
+      position: relative;
+      justify-content: center;
+      min-height: 32px;
+}
+
+.content-page--service .activity-carousel .content-carousel__nav {
+      position: absolute;
+      right: 0;
+}
+
+.content-page--service .activity-carousel .activity-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 20px;
+      overflow: visible;
+      scroll-snap-type: none;
+}
+
+.content-page--service .activity-carousel .swiper-initialized .activity-grid {
+      gap: 0;
+}
+
+.content-page--service .activity-carousel .activity-card {
+      width: auto;
+      max-width: none;
+      min-height: 330px;
+      height: auto;
+      align-self: stretch;
+}
+
+.content-page--service .activity-card__icon {
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 18px;
+      border-radius: 12px;
+      background: #e6f4f4;
+}
+
+.content-page--service .activity-card__icon img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+}
+
+.content-page--service .activity-carousel .activity-card h3 {
+      min-height: 0;
+      margin-bottom: 14px;
+}
+
+/* [УСЛУГА] фотогалерея */
+.content-page--service .photo-carousel {
+      margin-top: 28px;
+}
+
+.content-page--service .photo-carousel .content-carousel__header {
+      position: relative;
+      justify-content: center;
+      min-height: 32px;
+}
+
+.content-page--service .photo-carousel .content-carousel__nav {
+      position: absolute;
+      right: 0;
+}
+
+.content-page--service .photo-card {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #d9e4e5;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+}
+
+.content-page--service .photo-card>img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      background: #e6f4f4;
+}
+
+.content-page--service .photo-card figcaption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 9px 12px;
+      color: #5a6273;
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.35;
+      text-align: center;
+}
+
+/* [УСЛУГА] карусель связанных услуг */
+.content-page--service .related-services-carousel {
+      margin-top: 32px;
+}
+
+.content-page--service .related-services-carousel .content-carousel__header {
+      margin-bottom: 12px;
+}
+
+.content-page--service .related-services-carousel .links-track {
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      overflow: visible;
+      scroll-snap-type: none;
+}
+
+.content-page--service .related-services-carousel .swiper-initialized .links-track {
+      gap: 0;
+}
+
+.content-page--service .related-services-carousel .link-card {
+      min-height: 330px;
+      padding: 26px 24px;
+}
+
+.content-page--service .related-services-carousel .link-card h3 {
+      margin-bottom: 4px;
+      font-size: 19px;
+      line-height: 1.35;
+}
+
+.content-page--service .related-services-carousel .link-card p {
+      font-size: 15px;
+      line-height: 1.65;
+}
+
+.content-page--service .related-services-carousel .tag,
+.content-page--service .related-services-carousel .link-card>a:not(.btn) {
+      font-size: 13px;
+}
+
+/* [УСЛУГА] список литературы */
+.content-page--service .references-details+.medical-disclaimer {
+      margin-top: 22px;
+}
+
+/* [УСЛУГА] нумерованные и контрольные списки */
+.content-page--service .feature-steps,
+.content-page--service .feature-list,
+.content-page--service .rehabilitation-steps,
+.content-page--service .rehabilitation-list {
+      gap: 14px;
+}
+
+.content-page--service .feature-steps li,
+.content-page--service .feature-list li,
+.content-page--service .rehabilitation-steps li,
+.content-page--service .rehabilitation-list li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      column-gap: 14px;
+      row-gap: 4px;
+      align-items: start;
+      min-height: 82px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: #f5f8f9;
+      color: #333333;
+      font-size: 14px;
+      line-height: 1.55;
+}
+
+.content-page--service .rehabilitation-list li {
+      grid-template-rows: auto auto;
+}
+
+.content-page--service .feature-steps li::before,
+.content-page--service .feature-list li::before,
+.content-page--service .rehabilitation-steps li::before,
+.content-page--service .rehabilitation-list li::before {
+      position: static;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #e6f4f4;
+      color: #186b6c;
+      font-size: 13px;
+      font-weight: 700;
+}
+
+.content-page--service .rehabilitation-list li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      grid-row: 1 / span 2;
+}
+
+.content-page--service .rehabilitation-list strong,
+.content-page--service .rehabilitation-list span {
+      grid-column: 2;
+}
+
+.content-page--service .rehabilitation-list strong {
+      grid-row: 1;
+      align-self: start;
+      color: #333333;
+      font-size: 15px;
+}
+
+.content-page--service .rehabilitation-list span {
+      grid-row: 2;
+      color: #6b7c7d;
+      font-size: 14px;
+      line-height: 1.55;
+}
+
+@media (max-width: 767px) {
+      .content-page--service .hero .breadcrumbs {
+            padding-bottom: 12px;
+            font-size: 12px;
+      }
+
+      .content-page--service .service-navigation {
+            padding-top: 24px;
+      }
+
+      .content-page--service #staff .staff-carousel .content-carousel__header--controls-only {
+            display: flex;
+      }
+
+      .content-page--service #staff .staff-carousel .content-carousel__nav,
+      .content-page--service .activity-carousel .content-carousel__nav,
+      .content-page--service .photo-carousel .content-carousel__nav,
+      .content-page--service .related-services-carousel .content-carousel__nav {
+            display: flex;
+      }
+
+      .content-page--service .activity-carousel .content-carousel__header,
+      .content-page--service .photo-carousel .content-carousel__header,
+      .content-page--service #staff .staff-carousel .content-carousel__header--controls-only {
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 0;
+      }
+
+      .content-page--service .activity-carousel .content-carousel__nav,
+      .content-page--service .photo-carousel .content-carousel__nav,
+      .content-page--service #staff .staff-carousel .content-carousel__nav {
+            position: static;
+            align-self: flex-end;
+      }
+
+      .content-page--service .activity-carousel .activity-card {
+            min-height: 300px;
+      }
+
+      .content-page--service .related-services-carousel .link-card {
+            min-height: 300px;
+      }
+}
+
+/* [УСЛУГА] сворачиваемые таблицы */
+.content-page--service .mobile-table-toggle {
+      display: none;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #333333;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: left;
+}
+
+.content-page--service .disease-card--table>.mobile-table-toggle {
+      display: block;
+      margin-bottom: 20px;
+      cursor: default;
+}
+
+.content-page--service .care-compare-block {
+      margin-bottom: 24px;
+}
+
+.content-page--service .care-compare-block .compare-table-wrap {
+      margin: 0;
+}
+
+/* [УСЛУГА] финальная адаптивная нормализация */
+@media (max-width: 767px) {
+      .content-page--service .disease-expert,
+      .content-page--service .rehabilitation-expert {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 12px;
+            padding: 18px;
+            text-align: center;
+      }
+
+      .content-page--service .disease-expert .expert-avatar,
+      .content-page--service .rehabilitation-expert .expert-avatar {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+      }
+
+      .content-page--service .disease-expert__content,
+      .content-page--service .rehabilitation-expert__content {
+            width: 100%;
+      }
+
+      .content-page--service .expert-quote,
+      .content-page--service .rehabilitation-expert__quote {
+            width: 100%;
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+      }
+
+      .content-page--service .related-services-carousel .content-carousel__header {
+            display: none;
+      }
+
+      .content-page--service .references-section {
+            padding-top: 32px;
+            padding-bottom: 32px;
+      }
+
+      .content-page--service .references-block {
+            padding: 0;
+      }
+
+      .content-page--service .references-block__header {
+            flex-direction: row;
+            gap: 10px;
+            margin: 0;
+            padding: 14px 16px;
+            border-radius: 12px;
+      }
+
+      .content-page--service .references-block__header h2 {
+            order: 1;
+            min-width: 0;
+            font-size: 15px;
+            line-height: 1.35;
+      }
+
+      .content-page--service .references-toggle-icon {
+            order: 2;
+            margin-left: auto;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #218A8B;
+            border-bottom: 2px solid #218A8B;
+            font-size: 0;
+            transform: translateY(-2px) rotate(45deg);
+      }
+
+      .content-page--service .references-details[open] .references-toggle-icon {
+            transform: translateY(2px) rotate(225deg);
+      }
+
+      .content-page--service .references-details[open] summary {
+            margin-bottom: 14px;
+      }
+
+      .content-page--service .references-list li {
+            grid-template-columns: 24px minmax(0, 1fr);
+            gap: 8px;
+            padding: 13px 0;
+      }
+
+      .content-page--service .references-list__source {
+            font-size: 12px;
+            line-height: 1.55;
+      }
+
+      .content-page--service .references-details+.medical-disclaimer {
+            margin-top: 16px;
+      }
+
+      .content-page--service .medical-disclaimer {
+            grid-template-columns: 32px minmax(0, 1fr);
+            gap: 10px;
+            align-items: start;
+            padding: 16px;
+            border-radius: 12px;
+      }
+
+      .content-page--service .medical-disclaimer__icon {
+            width: 32px;
+            height: 32px;
+            font-size: 15px;
+      }
+
+      .content-page--service .medical-disclaimer__content strong {
+            font-size: 14px;
+      }
+
+      .content-page--service .medical-disclaimer__content p {
+            font-size: 12px;
+            line-height: 1.55;
+            overflow-wrap: anywhere;
+      }
+}
+
+@media (max-width: 640px) {
+      .content-page--service .toc-block {
+            padding: 14px;
+      }
+
+      .content-page--service .toc-block summary {
+            font-size: 15px;
+      }
+
+      .content-page--service .toc-list {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            padding-bottom: 0;
-            overflow: visible;
-            scroll-snap-type: none;
-      }
-
-      .content-page .rating-source {
+            gap: 5px;
             width: 100%;
-            min-width: 0;
-            flex: none;
-            padding: 10px 8px;
+            margin-top: 12px;
       }
 
+      .content-page--service .toc-list li {
+            min-width: 0;
+      }
+
+      .content-page--service .toc-list a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 36px;
+            padding: 7px 15px;
+            font-size: 12px;
+            line-height: 1.25;
+      }
+
+      .content-page--service .service-links {
+            gap: 18px;
+            padding: 22px 18px;
+      }
+
+      .content-page--service .service-links h3 {
+            font-size: 21px;
+            line-height: 1.35;
+      }
+
+      .content-page--service .service-links p {
+            font-size: 14px;
+            line-height: 1.55;
+      }
+
+      .content-page--service .service-links__tags {
+            gap: 7px;
+      }
+
+      .content-page--service .service-links__tags a {
+            padding: 5px 9px;
+            border-width: 1px;
+            font-size: 12px;
+            line-height: 1.3;
+      }
+
+      .content-page--service .mobile-table-toggle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 52px;
+            padding: 13px 44px 13px 16px;
+            cursor: pointer;
+            font-size: 17px;
+      }
+
+      .content-page--service .disease-card--table>.mobile-table-toggle {
+            display: flex;
+            margin-bottom: 0;
+            cursor: pointer;
+      }
+
+      .content-page--service .mobile-table-toggle::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #218A8B;
+            border-bottom: 2px solid #218A8B;
+            transform: translateY(-70%) rotate(45deg);
+            transition: transform 0.2s ease;
+      }
+
+      .content-page--service [data-mobile-collapsible].is-expanded>.mobile-table-toggle::after {
+            transform: translateY(-30%) rotate(225deg);
+      }
+
+      .content-page--service .disease-card--table,
+      .content-page--service .care-compare-block {
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #d9e4e5;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(33, 138, 139, 0.06);
+      }
+
+      .content-page--service .care-compare-block {
+            margin-top: 18px;
+            margin-bottom: 20px;
+      }
+
+      .content-page--service .disease-card--table:not(.is-expanded) .mobile-table-content,
+      .content-page--service .care-compare-block:not(.is-expanded) .care-compare-content {
+            display: none;
+      }
+
+      .content-page--service .disease-card--table.is-expanded .mobile-table-content,
+      .content-page--service .care-compare-block.is-expanded .care-compare-content {
+            padding: 0 16px 16px;
+      }
+
+      .content-page--service .disease-card--table.is-expanded .mobile-table-toggle,
+      .content-page--service .care-compare-block.is-expanded .mobile-table-toggle {
+            margin-bottom: 4px;
+      }
+
+      .content-page--service .feature-table-wrap,
+      .content-page--service .care-compare-block .compare-table-wrap {
+            margin: 0 -16px;
+            border-right: 0;
+            border-left: 0;
+            border-radius: 0;
+      }
+
+      .content-page--service .feature-table caption {
+            display: none;
+      }
+}
+
+/* [УСЛУГА] одинаковая геометрия заливных и контурных кнопок */
+.content-page--service .btn:not(.btn-outline) {
+      border: 2px solid #218A8B;
+}
+
+.content-page--service .quiz-block .btn:not(.btn-outline) {
+      border-color: #FFFFFF;
+}
+
+/* [УСЛУГА] дополнительные мобильные уточнения */
+@media (max-width: 767px) {
+      .content-page--service .hero .breadcrumbs ol {
+            column-gap: 4px;
+            row-gap: 2px;
+      }
+
+      .content-page--service .hero .breadcrumbs li {
+            margin: 0;
+            line-height: 1.3;
+      }
+
+      .content-page--service .hero .breadcrumbs ol>li:not(:last-child)::after {
+            margin-left: 4px;
+      }
+
+      .content-page--service .disease-card>h3,
+      .content-page--service .rehabilitation-card>h3 {
+            font-size: 16px;
+            line-height: 1.35;
+      }
+
+      .content-page--service .feature-steps li,
+      .content-page--service .feature-list li,
+      .content-page--service .rehabilitation-steps li,
+      .content-page--service .rehabilitation-list li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+            min-height: 0;
+            padding: 14px;
+            text-align: center;
+      }
+
+      .content-page--service .feature-steps li::before,
+      .content-page--service .feature-list li::before,
+      .content-page--service .rehabilitation-steps li::before,
+      .content-page--service .rehabilitation-list li::before {
+            flex: 0 0 36px;
+            width: 36px;
+            height: 36px;
+            grid-row: auto;
+      }
+
+      .content-page--service .feature-steps__content,
+      .content-page--service .rehabilitation-steps__content {
+            justify-items: center;
+      }
+
+      .content-page--service .rehabilitation-list strong,
+      .content-page--service .rehabilitation-list span {
+            grid-column: auto;
+            grid-row: auto;
+      }
+
+      .content-page--service .rehabilitation-list strong {
+            align-self: center;
+            text-align: center;
+      }
+
+      .content-page--service #staff .staff-carousel .content-carousel__nav,
+      .content-page--service .photo-carousel .content-carousel__nav,
+      .content-page--service .content-carousel--video .content-carousel__nav {
+            display: none;
+      }
+
+      .content-page--service .content-carousel--video .content-carousel__header {
+            display: none;
+      }
+
+      .content-page--service .photo-carousel+.content-carousel--video {
+            margin-top: 18px;
+      }
+
+      .content-page--service .related-services-carousel .link-card h3 {
+            font-size: 18px;
+      }
+}
+
+@media (max-width: 640px) {
+      .content-page--service .mobile-table-toggle,
+      .content-page--service .docs-toggle {
+            font-size: 15px;
+      }
+}
+
+@media (max-width: 767px) {
+      .content-page--service .disease-features__top,
+      .content-page--service .rehabilitation-programs__top {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+            margin-right: 0;
+            padding-right: 0;
+            overflow: visible;
+      }
+
+      .content-page--service .disease-features__top>.disease-card,
+      .content-page--service .rehabilitation-programs__top>.rehabilitation-card {
+            width: 100%;
+            max-width: none;
+      }
+
+      .content-page--service .feature-steps,
+      .content-page--service .feature-list,
+      .content-page--service .rehabilitation-steps,
+      .content-page--service .rehabilitation-list {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            gap: 14px;
+            margin-right: 0;
+            padding-right: 0;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-padding-right: 0;
+            scroll-snap-type: x proximity;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+      }
+
+      .content-page--service .feature-steps::-webkit-scrollbar,
+      .content-page--service .feature-list::-webkit-scrollbar,
+      .content-page--service .rehabilitation-steps::-webkit-scrollbar,
+      .content-page--service .rehabilitation-list::-webkit-scrollbar {
+            display: none;
+      }
+
+      .content-page--service .feature-steps>li,
+      .content-page--service .feature-list>li,
+      .content-page--service .rehabilitation-steps>li,
+      .content-page--service .rehabilitation-list>li {
+            flex: 0 0 min(72vw, 260px);
+            width: min(72vw, 260px);
+            scroll-snap-align: start;
+      }
+
+      .content-page--service .photo-carousel .content-carousel__header {
+            margin-right: 16px;
+            text-align: center;
+      }
+
+      .content-page--service .photo-carousel .section-subtitle {
+            max-width: 100%;
+            padding: 0 8px;
+            overflow-wrap: anywhere;
+      }
 }

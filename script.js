@@ -1,11 +1,21 @@
-// Локальные формы без отправки страницы
+/**
+ * Единый JavaScript сайта «Вита».
+ *
+ * Карта файла для разработчиков:
+ * 1. [ОБЩЕЕ] Компоненты, работающие на главной и странице услуги.
+ * 2. [УСЛУГА] Поведение, которое включается только при наличии блоков услуги.
+ *
+ * Каждый модуль изолирован и завершается раньше, если его разметки нет на странице.
+ */
+
+// [ОБЩЕЕ] Локальные формы без отправки страницы
 document.querySelectorAll('[data-local-form]').forEach(function (form) {
   form.addEventListener('submit', function (event) {
     event.preventDefault();
   });
 });
 
-// На телефонах объёмные блоки открываются по заголовку.
+// [ОБЩЕЕ] На телефонах объёмные блоки открываются по заголовку
 (function () {
   var media = window.matchMedia('(max-width: 640px)');
   var blocks = document.querySelectorAll('[data-mobile-collapsible]');
@@ -43,7 +53,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   }
 })();
 
-// Единая инициализация горизонтальных каруселей
+// [ОБЩЕЕ] Единая инициализация горизонтальных каруселей
 (function () {
   if (typeof window.Swiper !== 'function') return;
 
@@ -51,12 +61,23 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
     var viewport = carousel.querySelector('[data-content-carousel-viewport]');
     if (!viewport) return;
 
-    var hasWideCards = carousel.classList.contains('content-carousel--wide-cards');
-    var hasVideoCards = carousel.classList.contains('content-carousel--video');
-    var hasReviewCards = carousel.classList.contains('content-carousel--review-cards');
+    // [ОБЪЕДИНЕНО] Одна таблица размеров обслуживает все типы каруселей.
+    // Для нового варианта достаточно добавить класс, набор значений и выбор типа ниже.
+    var slideCounts = {
+      standard: [1.3, 1.7, 2.2, 3.25, 4.35],
+      wide: [1.08, 1.35, 1.8, 2.4, 3],
+      video: [1.05, 1.08, 1.15, 1.35, 1.55],
+      review: [1.05, 1.12, 1.45, 1.9, 2.25],
+      staff: [1.3, 1.7, 2.2, 3, 4]
+    };
+    var carouselType = carousel.classList.contains('staff-carousel') ? 'staff' :
+      carousel.classList.contains('content-carousel--review-cards') ? 'review' :
+        carousel.classList.contains('content-carousel--video') ? 'video' :
+          carousel.classList.contains('content-carousel--wide-cards') ? 'wide' : 'standard';
+    var counts = slideCounts[carouselType];
 
     new window.Swiper(viewport, {
-      slidesPerView: hasReviewCards ? 1.05 : (hasVideoCards ? 1.05 : (hasWideCards ? 1.08 : 1.3)),
+      slidesPerView: counts[0],
       spaceBetween: 16,
       // Правило проекта для всех текущих и новых каруселей:
       // без бесшовного loop и дублированных карточек; после последней позиции
@@ -77,17 +98,17 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
       },
       breakpoints: {
         480: {
-          slidesPerView: hasReviewCards ? 1.12 : (hasVideoCards ? 1.08 : (hasWideCards ? 1.35 : 1.7))
+          slidesPerView: counts[1]
         },
         640: {
-          slidesPerView: hasReviewCards ? 1.45 : (hasVideoCards ? 1.15 : (hasWideCards ? 1.8 : 2.2))
+          slidesPerView: counts[2]
         },
         900: {
-          slidesPerView: hasReviewCards ? 1.9 : (hasVideoCards ? 1.35 : (hasWideCards ? 2.4 : 3.25)),
+          slidesPerView: counts[3],
           spaceBetween: 20
         },
         1200: {
-          slidesPerView: hasReviewCards ? 2.25 : (hasVideoCards ? 1.55 : (hasWideCards ? 3 : 4.35)),
+          slidesPerView: counts[4],
           spaceBetween: 20
         }
       }
@@ -96,7 +117,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   });
 })();
 
-// Просмотр рукописных отзывов в общем модальном окне
+// [ОБЩЕЕ] Просмотр рукописных отзывов в общем модальном окне
 (function () {
   var dialog = document.getElementById('review-photo-dialog');
   if (!dialog) return;
@@ -126,7 +147,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   });
 })();
 
-// Запуск видео из превью без блокировки свайпа по карточкам
+// [ОБЩЕЕ] Запуск видео из превью без блокировки свайпа по карточкам
 (function () {
   document.querySelectorAll('[data-video-play]').forEach(function (button) {
     button.addEventListener('click', function () {
@@ -147,7 +168,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   });
 })();
 
-// Попап с примером меню
+// [ОБЩЕЕ] Попап с примером меню
 (function () {
   var trigger = document.querySelector('[data-menu-popup]');
   var modal = document.querySelector('[data-menu-modal]');
@@ -184,7 +205,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   });
 })();
 
-// Попапы с маршрутами до филиалов
+// [ОБЩЕЕ] Попапы с маршрутами до филиалов
 (function () {
   var triggers = document.querySelectorAll('[data-popup]');
   if (!triggers.length) return;
@@ -233,7 +254,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   });
 })();
 
-// Квиз подбора уровня ухода
+// [ОБЩЕЕ] Квиз подбора уровня ухода
 (function () {
   var triggers = document.querySelectorAll('[data-quiz-open]');
   var modal = document.querySelector('[data-quiz-modal]');
@@ -289,7 +310,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   });
 })();
 
-// Предварительный расчёт стоимости
+// [ОБЩЕЕ] Предварительный расчёт стоимости
 (function () {
   var calculator = document.querySelector('.calculator-wrap');
   var output = document.getElementById('calc-result');
@@ -317,4 +338,57 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
     calculate();
   });
   calculate();
+})();
+
+// ============================================================================
+// [УСЛУГА] Модули страницы услуги
+// ============================================================================
+
+// [УСЛУГА] Содержание: свёрнуто до 900 px и раскрыто на десктопе
+(function () {
+  var toc = document.querySelector('.toc-block');
+  if (!toc) return;
+
+  var desktopMedia = window.matchMedia('(min-width: 901px)');
+  var applyTocMode = function (event) {
+    toc.toggleAttribute('open', event.matches);
+  };
+
+  applyTocMode(desktopMedia);
+  if (typeof desktopMedia.addEventListener === 'function') {
+    desktopMedia.addEventListener('change', applyTocMode);
+  } else if (typeof desktopMedia.addListener === 'function') {
+    desktopMedia.addListener(applyTocMode);
+  }
+})();
+
+// [УСЛУГА] Распорядок дня: выделение текущего пункта по московскому времени
+(function () {
+  var scheduleItems = Array.from(document.querySelectorAll('.schedule-item time'));
+  if (!scheduleItems.length) return;
+
+  var moscowNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }));
+  var currentMinutes = moscowNow.getHours() * 60 + moscowNow.getMinutes();
+  var activeItem = null;
+
+  scheduleItems.forEach(function (timeElement) {
+    var timeParts = timeElement.getAttribute('datetime').split(':').map(Number);
+    var itemMinutes = timeParts[0] * 60 + timeParts[1];
+    if (itemMinutes <= currentMinutes) {
+      activeItem = timeElement.closest('.schedule-item');
+    }
+  });
+
+  if (!activeItem) {
+    activeItem = scheduleItems[0].closest('.schedule-item');
+  }
+
+  activeItem.classList.add('schedule-item--current');
+  var timeBox = activeItem.querySelector('.schedule-time');
+  if (!timeBox || timeBox.querySelector('.schedule-current-label')) return;
+
+  var label = document.createElement('span');
+  label.className = 'schedule-current-label';
+  label.textContent = 'сейчас';
+  timeBox.appendChild(label);
 })();
