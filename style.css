@@ -4,12 +4,13 @@
  * Карта файла для разработчиков:
  * - [ОБЩЕЕ] — компоненты обеих страниц (главная и услуга); их можно переносить вместе с разметкой блока.
  * - [УСЛУГА] — стили только для страницы услуги; изолированы через body.content-page--service.
+ * - [КАТАЛОГ УСЛУГ] — стили страницы со всеми услугами; изолированы через body.content-page--services-hub.
  * - [АДАПТИВ] — правила соответствующего блока для планшетов и телефонов.
  *
  * Порядок каскада:
  * 1. Общая дизайн-система и компоненты.
  * 2. Общие адаптивные переопределения.
- * 3. Изолированные стили страницы услуги.
+ * 3. Изолированные стили страницы услуги и каталога услуг.
  */
 
 /* [ОБЩЕЕ] Базовые стили и типографика */
@@ -17,6 +18,475 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+}
+
+/* ========================================================================== */
+/* [КАТАЛОГ УСЛУГ] Страница со всеми направлениями и услугами                */
+/* Все правила ограничены .content-page--services-hub. Шапка приходит из CMS. */
+/* ========================================================================== */
+
+.content-page--services-hub .services-hub__hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 76px;
+      background:
+        radial-gradient(ellipse at 82% 10%,
+          rgba(33, 138, 139, 0.32) 0%,
+          rgba(230, 244, 244, 0.92) 38%,
+          transparent 70%),
+        linear-gradient(to bottom,
+          #E6F4F4 0%,
+          #F5F8F9 58%,
+          #FFFFFF 100%);
+}
+
+.content-page--services-hub .services-hub__hero::before,
+.content-page--services-hub .services-hub__hero::after {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      content: "";
+}
+
+.content-page--services-hub .services-hub__hero::before {
+      top: -210px;
+      right: -80px;
+      width: 540px;
+      height: 540px;
+      border: 72px solid rgba(33, 138, 139, 0.09);
+}
+
+.content-page--services-hub .services-hub__hero::after {
+      bottom: -210px;
+      left: -120px;
+      width: 400px;
+      height: 400px;
+      background: rgba(33, 138, 139, 0.06);
+}
+
+.content-page--services-hub .services-hub__hero .container {
+      position: relative;
+      z-index: 1;
+}
+
+.content-page--services-hub .services-hub__breadcrumbs {
+      margin: 0 0 34px;
+      color: #6b7c7d;
+      font-size: 13px;
+}
+
+.content-page--services-hub .services-hub__breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+}
+
+.content-page--services-hub .services-hub__breadcrumbs li {
+      margin: 0;
+      padding: 0;
+}
+
+.content-page--services-hub .services-hub__breadcrumbs li:not(:last-child)::after {
+      margin-left: 6px;
+      color: #6b7c7d;
+      content: "›";
+}
+
+.content-page--services-hub .services-hub__breadcrumbs a {
+      color: #218A8B;
+}
+
+.content-page--services-hub .services-hub__hero-content {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+}
+
+.content-page--services-hub .services-hub__hero h1 {
+      margin-bottom: 18px;
+}
+
+.content-page--services-hub .services-hub__hero-content>p {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: #6b7c7d;
+      font-size: 18px;
+}
+
+.content-page--services-hub .services-hub__anchors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+}
+
+.content-page--services-hub .services-hub__anchor {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 9px 18px;
+      border: 1px solid #cfe1e2;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 5px 14px rgba(20, 84, 85, .06);
+      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+
+.content-page--services-hub .services-hub__anchor:hover {
+      border-color: #218A8B;
+      box-shadow: 0 8px 20px rgba(20, 84, 85, .11);
+      color: #218A8B;
+      transform: translateY(-2px);
+}
+
+.content-page--services-hub .services-hub__anchor img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+}
+
+.content-page--services-hub .services-hub__section {
+      scroll-margin-top: 24px;
+}
+
+.content-page--services-hub .services-hub__section-heading {
+      max-width: 820px;
+      margin-bottom: 38px;
+      padding-left: 20px;
+      border-left: 4px solid #218A8B;
+}
+
+.content-page--services-hub .services-hub__section-heading h2 {
+      margin-bottom: 8px;
+}
+
+.content-page--services-hub .services-hub__section-heading p {
+      margin: 0;
+      color: #6b7c7d;
+      font-size: 17px;
+}
+
+.content-page--services-hub .services-hub__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 22px;
+}
+
+.content-page--services-hub .services-hub__grid--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content-page--services-hub .services-hub__card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px;
+      border: 1px solid #d5e2e3;
+      border-radius: 16px;
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+      line-height: 1.5;
+}
+
+.content-page--services-hub .services-hub__card:hover {
+      border-color: rgba(33, 138, 139, .48);
+      box-shadow: 0 12px 28px rgba(23, 71, 72, .1);
+      transform: translateY(-3px);
+}
+
+.content-page--services-hub .services-hub__icon {
+      display: grid;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      background: #e6f4f4;
+      place-items: center;
+}
+
+.content-page--services-hub .services-hub__icon img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+}
+
+.content-page--services-hub .services-hub__card h3 {
+      margin-bottom: 14px;
+      font-size: 20px;
+      line-height: 1.5;
+}
+
+.content-page--services-hub .services-hub__card>p {
+      margin-bottom: 18px;
+      color: #6b7c7d;
+      font-size: 15px;
+      line-height: 1.5;
+}
+
+.content-page--services-hub .services-hub__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+      list-style: none;
+}
+
+.content-page--services-hub .services-hub__links li {
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+}
+
+.content-page--services-hub .services-hub__links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 7px 17px;
+      border: 1px solid #d5e2e3;
+      border-radius: 999px;
+      background: #f5f8f9;
+      color: #226f70;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      transition: background .2s, border-color .2s, color .2s;
+}
+
+.content-page--services-hub .services-hub__links a:hover {
+      border-color: #218A8B;
+      background: #218A8B;
+      color: #fff;
+}
+
+/* [КАТАЛОГ УСЛУГ] В карточках проживания одиночные кнопки стоят на одной линии. */
+.content-page--services-hub #format .services-hub__links {
+      margin-top: auto;
+      padding-top: 8px;
+}
+
+.content-page--services-hub .services-hub__note {
+      margin-top: 16px;
+      margin-bottom: 0;
+      color: #6b7c7d;
+      font-size: 14px;
+      line-height: 1.5;
+}
+
+.content-page--services-hub .services-hub__pagination {
+      display: none;
+}
+
+.content-page--services-hub .services-hub__consultation {
+      padding-top: 0;
+}
+
+.content-page--services-hub .services-hub__consultation-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 42px 48px;
+      border-radius: 18px;
+      background: #e6f4f4;
+}
+
+.content-page--services-hub .services-hub__consultation-card h2 {
+      margin-bottom: 8px;
+      font-size: 28px;
+}
+
+.content-page--services-hub .services-hub__consultation-card p {
+      max-width: 690px;
+      margin: 0;
+      color: #6b7c7d;
+}
+
+.content-page--services-hub .services-hub__consultation-card .btn {
+      flex: 0 0 auto;
+}
+
+/* [КАТАЛОГ УСЛУГ][АДАПТИВ] Карточки листаются горизонтально. */
+@media (max-width: 900px) {
+      .content-page--services-hub .services-hub__hero {
+            padding: 64px 0 58px;
+      }
+
+      .content-page--services-hub .services-hub__grid,
+      .content-page--services-hub .services-hub__grid--two {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x proximity;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            margin-right: -24px;
+            padding-right: 24px;
+      }
+
+      .content-page--services-hub .services-hub__grid::-webkit-scrollbar {
+            display: none;
+      }
+
+      .content-page--services-hub .services-hub__card,
+      .content-page--services-hub .services-hub__card--wide {
+            flex: 0 0 min(76vw, 360px);
+            width: min(76vw, 360px);
+            scroll-snap-align: start;
+      }
+
+      .content-page--services-hub .services-hub__pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 6px;
+            margin-top: 20px;
+      }
+
+      .content-page--services-hub .services-hub__pagination-button {
+            width: 26px;
+            height: 6px;
+            padding: 0;
+            border: 0;
+            border-radius: 999px;
+            background: #d9e4e5;
+            cursor: pointer;
+            transition: width .2s ease, background-color .2s ease;
+      }
+
+      .content-page--services-hub .services-hub__pagination-button.is-active {
+            width: 42px;
+            background: #218A8B;
+      }
+
+      .content-page--services-hub .services-hub__pagination-button:focus-visible {
+            outline: 3px solid rgba(33, 138, 139, .25);
+            outline-offset: 3px;
+      }
+
+      .content-page--services-hub .services-hub__consultation-card {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 24px;
+      }
+}
+
+@media (max-width: 640px) {
+      .content-page--services-hub .services-hub__hero {
+            padding: 44px 0 40px;
+      }
+
+      .content-page--services-hub .services-hub__breadcrumbs {
+            margin-bottom: 24px;
+            line-height: 1.3;
+      }
+
+      .content-page--services-hub .services-hub__hero-content {
+            text-align: left;
+      }
+
+      .content-page--services-hub .services-hub__hero h1 {
+            margin-bottom: 14px;
+      }
+
+      .content-page--services-hub .services-hub__hero-content>p {
+            margin-bottom: 24px;
+            font-size: 15px;
+      }
+
+      .content-page--services-hub .services-hub__anchors {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+      }
+
+      .content-page--services-hub .services-hub__anchor {
+            width: 100%;
+            min-height: 42px;
+            justify-content: center;
+            padding: 8px 14px;
+            font-size: 12.5px;
+            line-height: 1.25;
+      }
+
+      .content-page--services-hub .services-hub__anchor img {
+            display: none;
+      }
+
+      .content-page--services-hub .services-hub__section-heading {
+            margin-bottom: 24px;
+            padding-left: 14px;
+            border-left-width: 3px;
+      }
+
+      .content-page--services-hub .services-hub__section-heading h2 {
+            font-size: 24px;
+      }
+
+      .content-page--services-hub .services-hub__section-heading p {
+            font-size: 15px;
+      }
+
+      .content-page--services-hub .services-hub__card,
+      .content-page--services-hub .services-hub__card--wide {
+            flex-basis: min(78vw, 310px);
+            width: min(78vw, 310px);
+            padding: 22px;
+      }
+
+      .content-page--services-hub .services-hub__grid,
+      .content-page--services-hub .services-hub__grid--two {
+            margin-right: -16px;
+            padding-right: 16px;
+      }
+
+      .content-page--services-hub .services-hub__icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 16px;
+      }
+
+      .content-page--services-hub .services-hub__icon img {
+            width: 33px;
+            height: 33px;
+      }
+
+      .content-page--services-hub .services-hub__card h3 {
+            font-size: 17px;
+      }
+
+      .content-page--services-hub .services-hub__links {
+            column-gap: 8px;
+            row-gap: 13px;
+      }
+
+      .content-page--services-hub .services-hub__links a {
+            min-height: 34px;
+            padding: 7px 13px;
+            font-size: 13px;
+      }
+
+      .content-page--services-hub .services-hub__consultation-card {
+            padding: 28px 24px;
+      }
+
+      .content-page--services-hub .services-hub__consultation-card h2 {
+            font-size: 22px;
+      }
+
+      .content-page--services-hub .services-hub__consultation-card .btn {
+            width: 100%;
+      }
 }
 
 html {
@@ -3944,6 +4414,8 @@ body.content-page {
       }
 
       .content-page .enrollment-section .steps-list {
+            gap: 12px;
+            margin-bottom: 20px;
             margin-right: -16px;
             padding-right: 16px;
             scroll-padding-right: 16px;
@@ -3960,7 +4432,7 @@ body.content-page {
             align-items: stretch;
             flex-direction: column;
             gap: 14px;
-            margin: 6px 0 28px;
+            margin: 0 0 28px;
             padding: 14px;
       }
 

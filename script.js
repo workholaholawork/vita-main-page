@@ -4,6 +4,7 @@
  * Карта файла для разработчиков:
  * 1. [ОБЩЕЕ] Компоненты, работающие на главной и странице услуги.
  * 2. [УСЛУГА] Поведение, которое включается только при наличии блоков услуги.
+ * 3. [КАТАЛОГ УСЛУГ] Поведение страницы со всеми направлениями и услугами.
  *
  * Каждый модуль изолирован и завершается раньше, если его разметки нет на странице.
  */
@@ -383,7 +384,7 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
     activeItem = scheduleItems[0].closest('.schedule-item');
   }
 
-  activeItem.classList.add('schedule-item--current');
+activeItem.classList.add('schedule-item--current');
   var timeBox = activeItem.querySelector('.schedule-time');
   if (!timeBox || timeBox.querySelector('.schedule-current-label')) return;
 
@@ -391,4 +392,76 @@ document.querySelectorAll('[data-local-form]').forEach(function (form) {
   label.className = 'schedule-current-label';
   label.textContent = 'сейчас';
   timeBox.appendChild(label);
+})();
+
+// ============================================================================
+// [КАТАЛОГ УСЛУГ] Горизонтальные карточки на планшетах и телефонах
+// ============================================================================
+(function () {
+  var tracks = document.querySelectorAll('.content-page--services-hub [data-horizontal-scroll]');
+  if (!tracks.length) return;
+
+  var mobileMedia = window.matchMedia('(max-width: 900px)');
+
+  tracks.forEach(function (track) {
+    var cards = Array.from(track.querySelectorAll('.services-hub__card'));
+    var pagination = track.nextElementSibling;
+    var buttons = [];
+    var frame = 0;
+
+    function getStep() {
+      var firstCard = cards[0];
+      var gap = parseFloat(window.getComputedStyle(track).gap) || 16;
+      return firstCard ? firstCard.getBoundingClientRect().width + gap : track.clientWidth * .75;
+    }
+
+    function setActiveBullet() {
+      frame = 0;
+      if (!buttons.length) return;
+
+      var step = getStep();
+      var activeIndex = step ? Math.round(track.scrollLeft / step) : 0;
+      activeIndex = Math.max(0, Math.min(activeIndex, buttons.length - 1));
+
+      buttons.forEach(function (button, index) {
+        var isActive = index === activeIndex;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-current', isActive ? 'true' : 'false');
+      });
+    }
+
+    if (pagination && pagination.hasAttribute('data-services-hub-pagination')) {
+      cards.forEach(function (_card, index) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'services-hub__pagination-button';
+        button.setAttribute('aria-label', 'Показать карточку ' + (index + 1));
+        button.addEventListener('click', function () {
+          track.scrollTo({ left: getStep() * index, behavior: 'smooth' });
+        });
+        pagination.appendChild(button);
+        buttons.push(button);
+      });
+      setActiveBullet();
+    }
+
+    track.addEventListener('scroll', function () {
+      if (frame) return;
+      frame = window.requestAnimationFrame(setActiveBullet);
+    }, { passive: true });
+
+    track.addEventListener('keydown', function (event) {
+      if (!mobileMedia.matches || (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft')) return;
+
+      var step = getStep();
+
+      event.preventDefault();
+      track.scrollBy({
+        left: event.key === 'ArrowRight' ? step : -step,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('resize', setActiveBullet);
+  });
 })();
